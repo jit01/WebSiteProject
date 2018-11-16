@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Welcome to Login Form</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .col-md-4{
+            padding-top: 20%;
+        }
+        body{
+            background: url("https://www.sevenforums.com/attachments/general-discussion/250721d1486599828t-any-ideas-how-my-login-background-screen-changed-its-own-backgrounddefault.jpg");
+        }
+        a{
+            font-family: "Times New Roman";
+            font-size: x-large;
+            color: black;
+        }
+        a:hover{
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4"></div>
+        <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4">
+            <form method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Login" name="log">
+                <input type="reset" value="Reset" name="log">
+                <a href="./reg">Register Here</a>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

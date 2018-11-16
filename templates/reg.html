@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Welcome to Registration page</title>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-image: url("http://iskrali.com/wp-content/uploads/2018/08/registration-banner.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        form{
+            color: whitesmoke;
+
+        }
+        #h1{
+            color: black;
+        }
+        html{
+
+        }
+
+
+    </style>
+
+</head>
+<body>
+<center><h1 class="jumbotron">Welcome to Registration page</h1></center>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <form  method="post">
+                {% csrf_token %}
+                {{ form }}<br>
+                <input id="h1" type="submit" value="submit">
+                <input id="h1" type="reset" value="Reset">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
