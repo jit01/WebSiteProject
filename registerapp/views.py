@@ -1,3 +1,5 @@
+
+# Ajit Edited BY cloning This Projet into the Pycharm
 from django.shortcuts import render, redirect
 from .models import regmodel
 from .forms import refrom,loginform
