@@ -10,6 +10,17 @@
         navbar{
             color: black;
         }
+        img{
+            height: 60%;
+            width: 30%;
+        }
+        #ind{
+            margin-left: -70%;
+
+        }
+        #grp{
+            margin-left: -40%;
+        }
     </style>
 </head>
 <body>
@@ -63,12 +74,32 @@
             <li role="separator" class="divider"></li>
             <li><a href=''>Logout</a></li>
           </ul>
-        </li>
+        </li
 
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+   <form>
+    hello {{ user }}
+</form>
+
+<form method="post" action="result">
+    <img src="https://boygeniusreport.files.wordpress.com/2018/07/screen-shot-2018-07-30-at-10-18-55-am.png?w=690">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <button id = ind class="btn btn-success btn-lg" name="btn" value="single">Buy Individual(cost $200)</button>
+                </div>
+             <div class="col-md-2">
+                <button id = grp class="btn btn-success btn-lg" name="btn" value="group">Buy Group(Cost $150)</button>
+
+            </div>
+        </div>
+
+    </div>
+</form>
+
 </body>
 </html>
 
@@ -76,6 +107,3 @@
 
 
 
-<form>
-    hello {{ user }}
-</form>

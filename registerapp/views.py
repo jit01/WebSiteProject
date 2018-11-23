@@ -40,12 +40,31 @@ def Login(request):
             dbuser=regmodel.objects.filter(username=username, password=password)
             if dbuser:
                 return render(request,'home.html',{'user':username})
+
             else:
                 return HttpResponse("Error To Login")
 
     else:
         form=loginform()
         return render(request,'login.html',{'form':form})
+
+def result(request):
+
+    num = request.POST.get('btn')
+
+    if num == 'single':
+        return render(request,'singlethankyou.html')
+    if num == 'group':
+        # data=regmodel.objects.all()
+        # stu={
+        #     "info":data
+        # }
+        # return render(request,'invite.html',stu)
+        return HttpResponse("Grp Calling successful")
+    else:
+        return HttpResponse("No operation")
+
+
 
 
 
