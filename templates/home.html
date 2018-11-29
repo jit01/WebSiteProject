@@ -15,11 +15,14 @@
             width: 30%;
         }
         #ind{
-            margin-left: -70%;
+            margin-top: -100%;
 
         }
         #grp{
-            margin-left: -40%;
+            margin-top: -70%;
+        }
+        #invi{
+            margin-top: -40%;
         }
     </style>
 </head>
@@ -74,7 +77,7 @@
             <li role="separator" class="divider"></li>
             <li><a href=''>Logout</a></li>
           </ul>
-        </li
+        </li>
 
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -88,15 +91,13 @@
     <img src="https://boygeniusreport.files.wordpress.com/2018/07/screen-shot-2018-07-30-at-10-18-55-am.png?w=690">
     <div class="container">
         <div class="row">
+            <div class="col-md-4"></div>
             <div class="col-md-2">
                 <button id = ind class="btn btn-success btn-lg" name="btn" value="single">Buy Individual(cost $200)</button>
-                </div>
-             <div class="col-md-2">
-                <button id = grp class="btn btn-success btn-lg" name="btn" value="group">Buy Group(Cost $150)</button>
-
-            </div>
+                <button id = grp class="btn btn-success btn-lg" name="btn" value="group" disabled="disabled">Buy Group(Cost $150)</button>
+                <button id = invi class="btn btn-success btn-lg" name="btn" value="Invite">Invite Friends</button>
+             </div>
         </div>
-
     </div>
 </form>
 

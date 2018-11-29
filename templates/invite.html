@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Invite Friend </title>
+</head>
+<body>
+<form method="post">
+
+
+    {% for row in data %}
+        <div class="checkbox">
+            <label><input type="checkbox" value="{{ row.username }}" name="checks[]">{{ row.username }}</label>
+        </div>
+    {% endfor %}
+
+    <button class="btn btn-success btn-group-lg" name="invite" value="invite">Invite</button>
+</form>
+</body>
+</html>

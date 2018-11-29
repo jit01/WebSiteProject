@@ -5,32 +5,21 @@ from .models import regmodel
 from .forms import refrom,loginform
 from django.http.response import HttpResponse
 
+
+
+
 def registration(request):
     if request.method=='POST':
         form=refrom(request.POST)
         if form.is_valid():
             form.save()
-            # fname=request.POST.get('fname','')
-            # lname=request.POST.get('lname','')
-            # email=request.POST.get('email','')
-            # contact=request.POST.get('contact','')
-            #
-            # a=regmodel(
-            #     fname=fname,
-            #     lname=lname,
-            #     email=email,
-            #     contact=contact
-            # )
-            # a.save()
-
             return redirect('./')
         else:
             return HttpResponse('Error while inserting...')
-
-
     else:
         form=refrom()
         return render(request,'reg.html',{'form':form})
+
 def Login(request):
     if request.method=='POST':
         form=loginform(request.POST)
@@ -43,24 +32,41 @@ def Login(request):
 
             else:
                 return HttpResponse("Error To Login")
+        else:
+            raise ("Please Check the credintiality ")
 
     else:
         form=loginform()
         return render(request,'login.html',{'form':form})
 
 def result(request):
-
     num = request.POST.get('btn')
+    num1 = request.POST.get('invite')
+    row = request.POST.getlist('checks')
 
     if num == 'single':
         return render(request,'singlethankyou.html')
     if num == 'group':
-        # data=regmodel.objects.all()
-        # stu={
-        #     "info":data
-        # }
-        # return render(request,'invite.html',stu)
         return HttpResponse("Grp Calling successful")
+    if num == 'Invite':
+        data = regmodel.objects.all()
+        return render(request, 'invite.html',{'data':data})
+    if num1 == 'invite':
+        # return HttpResponse("Invited")
+        a=[]
+        req_to_user = request.POST.getlist('checks[]')
+        if req_to_user:
+            # all_user = regmodel.objects.filter(username=req_to_user)
+            #       # return HttpResponse(all_user)
+            # data1 = regmodel.objects.all()
+            # data2 = regmodel.objects.filter(username=req_to_user)
+            # if data1 == data2:
+            a.append(req_to_user)
+            # return HttpResponse(a)
+
+
+        else:
+            return HttpResponse("Please choose The user")
     else:
         return HttpResponse("No operation")
 
